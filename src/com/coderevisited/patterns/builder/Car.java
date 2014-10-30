@@ -1,6 +1,12 @@
 package com.coderevisited.patterns.builder;
 
-public class CarBuilder
+/**
+ * 1. Create a builder class.
+ * 2. Add constructor with required properties
+ * 3. Return updated builder object after setting each property
+ * 4. finally call build to return car object
+ */
+public class Car
 {
     private final String variant;
     private final int numberOfSeats;
@@ -8,7 +14,7 @@ public class CarBuilder
     private final boolean enableGPS;
     private final boolean alloyWheels;
 
-    public CarBuilder(Builder builder)
+    public Car(Builder builder)
     {
         this.variant = builder.variant;
         this.numberOfSeats = builder.numberOfSeats;
@@ -52,9 +58,9 @@ public class CarBuilder
             return this;
         }
 
-        public CarBuilder build()
+        public Car build()
         {
-            return new CarBuilder(this);
+            return new Car(this);
         }
     }
 
