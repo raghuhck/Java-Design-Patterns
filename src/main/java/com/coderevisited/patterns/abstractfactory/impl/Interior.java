@@ -23,29 +23,14 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class MaruthiCarFactory extends CarFactory {
+public interface Interior {
 
-    @Override
-    protected Car createCar(String name) {
-
-        CarPartsFactory partsFactory = new MaruthiCarPartsFactory();
-        Car car = null;
-
-        if (name.equals("Diesel")) {
-            car = new DieselCar(partsFactory);
-            car.setName("Maruthi Diesel car");
-        } else if (name.equals("Petrol")) {
-            car = new PetrolCar(partsFactory);
-            car.setName("Maruthi Petrol car");
-        }
-
-        return car;
-    }
+    public String toString();
 }

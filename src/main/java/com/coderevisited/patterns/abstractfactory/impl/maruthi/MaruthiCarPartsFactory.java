@@ -23,17 +23,37 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.maruthi;
+
+import com.coderevisited.patterns.abstractfactory.Tyre;
+import com.coderevisited.patterns.abstractfactory.impl.CarPartsFactory;
+import com.coderevisited.patterns.abstractfactory.impl.Engine;
+import com.coderevisited.patterns.abstractfactory.impl.Exterior;
+import com.coderevisited.patterns.abstractfactory.impl.Interior;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class BMWInterior implements Interior {
+public class MaruthiCarPartsFactory implements CarPartsFactory {
+    @Override
+    public Tyre createTyre() {
+        return new MaruthiTyre();
+    }
 
     @Override
-    public String toString() {
-        return "BMW Interior";
+    public Engine createEngine() {
+        return new MaruthiEngine();
+    }
+
+    @Override
+    public Interior createInterior() {
+        return new MaruthiInterior();
+    }
+
+    @Override
+    public Exterior createExterior() {
+        return new MaruthiExterior();
     }
 }

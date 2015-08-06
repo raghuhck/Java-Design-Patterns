@@ -23,14 +23,19 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.bmw;
+
+import com.coderevisited.patterns.abstractfactory.Interior;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public interface Engine {
+public class BMWInterior implements Interior {
 
-    public String toString();
+    @Override
+    public String toString() {
+        return "BMW Interior";
+    }
 }

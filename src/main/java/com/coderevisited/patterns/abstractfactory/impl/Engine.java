@@ -23,28 +23,14 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class BMWCarFactory extends CarFactory {
+public interface Engine {
 
-    @Override
-    protected Car createCar(String name) {
-        CarPartsFactory partsFactory = new BMWCarPartsFactory();
-        Car car = null;
-
-        if (name.equals("Diesel")) {
-            car = new DieselCar(partsFactory);
-            car.setName("BMW Diesel car");
-        } else if (name.equals("Petrol")) {
-            car = new PetrolCar(partsFactory);
-            car.setName("BMW Petrol car");
-        }
-
-        return car;
-    }
+    public String toString();
 }

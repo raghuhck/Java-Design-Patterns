@@ -23,31 +23,29 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.api;
+
+import com.coderevisited.patterns.abstractfactory.Car;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class MaruthiCarPartsFactory implements CarPartsFactory {
-    @Override
-    public Tyre createTyre() {
-        return new MaruthiTyre();
+public abstract class CarFactory {
+
+
+    public Car orderCar(String name) {
+
+        Car car = createCar(name);
+        car.assemble();
+        car.pdc();
+        car.clean();
+        return car;
+
     }
 
-    @Override
-    public Engine createEngine() {
-        return new MaruthiEngine();
-    }
+    protected abstract Car createCar(String name);
 
-    @Override
-    public Interior createInterior() {
-        return new MaruthiInterior();
-    }
 
-    @Override
-    public Exterior createExterior() {
-        return new MaruthiExterior();
-    }
 }

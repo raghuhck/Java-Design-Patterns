@@ -23,20 +23,31 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.api;
+
+import com.coderevisited.patterns.abstractfactory.*;
+import com.coderevisited.patterns.abstractfactory.api.CarFactory;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public interface CarPartsFactory {
+public class BMWCarFactory extends CarFactory {
 
-    Tyre createTyre();
+    @Override
+    protected Car createCar(String name) {
+        CarPartsFactory partsFactory = new BMWCarPartsFactory();
+        Car car = null;
 
-    Engine createEngine();
+        if (name.equals("Diesel")) {
+            car = new DieselCar(partsFactory);
+            car.setName("BMW Diesel car");
+        } else if (name.equals("Petrol")) {
+            car = new PetrolCar(partsFactory);
+            car.setName("BMW Petrol car");
+        }
 
-    Interior createInterior();
-
-    Exterior createExterior();
+        return car;
+    }
 }

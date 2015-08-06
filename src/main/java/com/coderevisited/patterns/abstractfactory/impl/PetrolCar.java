@@ -23,7 +23,10 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl;
+
+import com.coderevisited.patterns.abstractfactory.api.Car;
+import com.coderevisited.patterns.abstractfactory.impl.CarPartsFactory;
 
 /**
  * User :  Suresh

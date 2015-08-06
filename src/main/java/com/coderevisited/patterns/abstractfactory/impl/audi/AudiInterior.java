@@ -23,54 +23,20 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.audi;
+
+import com.coderevisited.patterns.abstractfactory.Interior;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public abstract class Car {
+public class AudiInterior implements Interior {
 
-    protected String name;
-    protected Tyre tyre;
-    protected Engine engine;
-    protected Interior interior;
-    protected Exterior exterior;
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void assemble() {
-        System.out.println("Assembling Car for continues for 4 hours");
-        doAssemble();
-    }
-
-    protected abstract void doAssemble();
-
-    public void pdc() {
-        System.out.println("PDC is taking place for 2 hours");
-    }
-
-    public void clean() {
-        System.out.println("Cleaning in progress for 30 min");
-    }
-
+    @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("---------- " + name + " ------\n");
-        sb.append(tyre);
-        sb.append("\n");
-        sb.append(engine);
-        sb.append("\n");
-        sb.append(interior);
-        sb.append("\n");
-        sb.append(exterior);
-        sb.append("\n");
-
-        return sb.toString();
-
+        return "Audi Interior";
     }
+
 }

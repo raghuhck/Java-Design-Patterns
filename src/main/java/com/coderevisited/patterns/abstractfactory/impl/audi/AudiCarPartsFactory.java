@@ -23,27 +23,33 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.audi;
+
+import com.coderevisited.patterns.abstractfactory.*;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public abstract class CarFactory {
-
-
-    public Car orderCar(String name) {
-
-        Car car = createCar(name);
-        car.assemble();
-        car.pdc();
-        car.clean();
-        return car;
-
+public class AudiCarPartsFactory implements CarPartsFactory {
+    @Override
+    public Tyre createTyre() {
+        return new AudiTyre();
     }
 
-    protected abstract Car createCar(String name);
+    @Override
+    public Engine createEngine() {
+        return new AudiEngine();
+    }
 
+    @Override
+    public Interior createInterior() {
+        return new AudiInterior();
+    }
 
+    @Override
+    public Exterior createExterior() {
+        return new AudiExterior();
+    }
 }

@@ -23,31 +23,19 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.maruthi;
+
+import com.coderevisited.patterns.abstractfactory.impl.Engine;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class AudiCarPartsFactory implements CarPartsFactory {
-    @Override
-    public Tyre createTyre() {
-        return new AudiTyre();
-    }
+public class MaruthiEngine implements Engine {
 
     @Override
-    public Engine createEngine() {
-        return new AudiEngine();
-    }
-
-    @Override
-    public Interior createInterior() {
-        return new AudiInterior();
-    }
-
-    @Override
-    public Exterior createExterior() {
-        return new AudiExterior();
+    public String toString() {
+        return "Maruthi Engine";
     }
 }

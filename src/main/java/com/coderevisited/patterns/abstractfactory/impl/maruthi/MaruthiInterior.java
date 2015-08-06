@@ -23,28 +23,18 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.maruthi;
+
+import com.coderevisited.patterns.abstractfactory.impl.Interior;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class AudiCarFactory extends CarFactory {
-
+public class MaruthiInterior implements Interior {
     @Override
-    protected Car createCar(String name) {
-        CarPartsFactory partsFactory = new AudiCarPartsFactory();
-        Car car = null;
-
-        if (name.equals("Diesel")) {
-            car = new DieselCar(partsFactory);
-            car.setName("Audi Diesel car");
-        } else if (name.equals("Petrol")) {
-            car = new PetrolCar(partsFactory);
-            car.setName("Audi Petrol car");
-        }
-
-        return car;
+    public String toString() {
+        return "Maruthi Interior";
     }
 }

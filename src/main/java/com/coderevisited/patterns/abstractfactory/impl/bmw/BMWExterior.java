@@ -23,28 +23,19 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.bmw;
+
+import com.coderevisited.patterns.abstractfactory.Exterior;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class DieselCar extends Car {
-
-
-    private final CarPartsFactory partsFactory;
-
-    public DieselCar(CarPartsFactory partsFactory) {
-        this.partsFactory = partsFactory;
-    }
+public class BMWExterior implements Exterior {
 
     @Override
-    protected void doAssemble() {
-        System.out.println("Assembling "+ name);
-        engine = partsFactory.createEngine();
-        tyre = partsFactory.createTyre();
-        interior = partsFactory.createInterior();
-        exterior = partsFactory.createExterior();
+    public String toString() {
+        return "BMW Exterior";
     }
 }

@@ -23,7 +23,9 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.maruthi;
+
+import com.coderevisited.patterns.abstractfactory.impl.Exterior;
 
 /**
  * User :  Suresh

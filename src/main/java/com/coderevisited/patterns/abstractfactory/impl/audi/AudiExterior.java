@@ -23,18 +23,19 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.audi;
+
+import com.coderevisited.patterns.abstractfactory.Exterior;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class AudiInterior implements Interior {
+public class AudiExterior implements Exterior {
 
     @Override
     public String toString() {
-        return "Audi Interior";
+        return "Audi Exterior";
     }
-
 }

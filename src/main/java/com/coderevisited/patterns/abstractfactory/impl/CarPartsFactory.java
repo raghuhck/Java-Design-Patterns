@@ -23,17 +23,25 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl;
+
+import com.coderevisited.patterns.abstractfactory.Engine;
+import com.coderevisited.patterns.abstractfactory.Exterior;
+import com.coderevisited.patterns.abstractfactory.Interior;
+import com.coderevisited.patterns.abstractfactory.Tyre;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class BMWExterior implements Exterior {
+public interface CarPartsFactory {
 
-    @Override
-    public String toString() {
-        return "BMW Exterior";
-    }
+    Tyre createTyre();
+
+    Engine createEngine();
+
+    Interior createInterior();
+
+    Exterior createExterior();
 }

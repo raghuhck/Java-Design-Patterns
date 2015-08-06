@@ -23,17 +23,19 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.audi;
+
+import com.coderevisited.patterns.abstractfactory.Tyre;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class BMWEngine implements Engine {
+public class AudiTyre implements Tyre {
 
     @Override
     public String toString() {
-        return "BMW Engine";
+        return "Audi Tyre";
     }
 }

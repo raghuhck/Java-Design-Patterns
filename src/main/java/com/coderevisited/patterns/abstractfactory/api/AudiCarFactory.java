@@ -23,14 +23,31 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.api;
+
+import com.coderevisited.patterns.abstractfactory.*;
+import com.coderevisited.patterns.abstractfactory.api.CarFactory;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public interface Tyre {
+public class AudiCarFactory extends CarFactory {
 
-    public String toString();
+    @Override
+    protected Car createCar(String name) {
+        CarPartsFactory partsFactory = new AudiCarPartsFactory();
+        Car car = null;
+
+        if (name.equals("Diesel")) {
+            car = new DieselCar(partsFactory);
+            car.setName("Audi Diesel car");
+        } else if (name.equals("Petrol")) {
+            car = new PetrolCar(partsFactory);
+            car.setName("Audi Petrol car");
+        }
+
+        return car;
+    }
 }

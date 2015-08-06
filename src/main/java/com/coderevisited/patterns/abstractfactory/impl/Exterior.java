@@ -23,31 +23,16 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class BMWCarPartsFactory implements CarPartsFactory {
-    @Override
-    public Tyre createTyre() {
-        return new BMWTyre();
-    }
+public interface Exterior {
 
-    @Override
-    public Engine createEngine() {
-        return new BMWEngine();
-    }
+    public String toString();
 
-    @Override
-    public Interior createInterior() {
-        return new BMWInterior();
-    }
 
-    @Override
-    public Exterior createExterior() {
-        return new BMWExterior();
-    }
 }

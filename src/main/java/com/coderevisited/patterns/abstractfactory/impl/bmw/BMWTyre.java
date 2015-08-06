@@ -23,14 +23,20 @@
  *
  */
 
-package com.coderevisited.patterns.abstractfactory;
+package com.coderevisited.patterns.abstractfactory.impl.bmw;
+
+import com.coderevisited.patterns.abstractfactory.Tyre;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public interface Interior {
+public class BMWTyre implements Tyre {
 
-    public String toString();
+
+    @Override
+    public String toString() {
+        return "BMW Tyre";
+    }
 }
