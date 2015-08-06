@@ -23,44 +23,29 @@
  *
  */
 
-package com.coderevisited.patterns.builder;
+package com.coderevisited.patterns.abstractfactory;
 
-public class CarJavaBeansPattern
-{
-    private String variant = "sports";
-    private int numberOfSeats = 4;
-    private boolean powerSteering = false;
-    private boolean enableGPS = false;
-    private boolean alloyWheels = false;
+/**
+ * User :  Suresh
+ * Date :  06/08/15
+ * Version : v1
+ */
+public class PetrolCar extends Car {
 
-    public CarJavaBeansPattern()
-    {
+    private final CarPartsFactory partsFactory;
+
+    public PetrolCar(CarPartsFactory partsFactory) {
+
+        this.partsFactory = partsFactory;
 
     }
 
-
-    public void setVariant(String variant)
-    {
-        this.variant = variant;
-    }
-
-    public void setNumberOfSeats(int numberOfSeats)
-    {
-        this.numberOfSeats = numberOfSeats;
-    }
-
-    public void setPowerSteering(boolean powerSteering)
-    {
-        this.powerSteering = powerSteering;
-    }
-
-    public void setEnableGPS(boolean enableGPS)
-    {
-        this.enableGPS = enableGPS;
-    }
-
-    public void setAlloyWheels(boolean alloyWheels)
-    {
-        this.alloyWheels = alloyWheels;
+    @Override
+    protected void doAssemble() {
+        System.out.println("Assembling " + name);
+        engine = partsFactory.createEngine();
+        tyre = partsFactory.createTyre();
+        interior = partsFactory.createInterior();
+        exterior = partsFactory.createExterior();
     }
 }

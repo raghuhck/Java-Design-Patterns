@@ -23,44 +23,32 @@
  *
  */
 
-package com.coderevisited.patterns.builder;
+package com.coderevisited.patterns.abstractfactory;
 
-public class CarJavaBeansPattern
-{
-    private String variant = "sports";
-    private int numberOfSeats = 4;
-    private boolean powerSteering = false;
-    private boolean enableGPS = false;
-    private boolean alloyWheels = false;
+/**
+ * User :  Suresh
+ * Date :  06/08/15
+ * Version : v1
+ */
+public class Driver {
 
-    public CarJavaBeansPattern()
-    {
+    public static void main(String[] args) {
+        CarFactory maruthiCarFactory = new MaruthiCarFactory();
+        makeCar(maruthiCarFactory);
 
+        CarFactory audiCarFactory = new AudiCarFactory();
+        makeCar(audiCarFactory);
+
+        CarFactory bmwCarFactory = new BMWCarFactory();
+        makeCar(bmwCarFactory);
     }
 
+    private static void makeCar(CarFactory factory) {
+        Car car = factory.orderCar("Diesel");
 
-    public void setVariant(String variant)
-    {
-        this.variant = variant;
-    }
+        System.out.println(car);
 
-    public void setNumberOfSeats(int numberOfSeats)
-    {
-        this.numberOfSeats = numberOfSeats;
-    }
-
-    public void setPowerSteering(boolean powerSteering)
-    {
-        this.powerSteering = powerSteering;
-    }
-
-    public void setEnableGPS(boolean enableGPS)
-    {
-        this.enableGPS = enableGPS;
-    }
-
-    public void setAlloyWheels(boolean alloyWheels)
-    {
-        this.alloyWheels = alloyWheels;
+        car = factory.orderCar("Petrol");
+        System.out.println(car);
     }
 }

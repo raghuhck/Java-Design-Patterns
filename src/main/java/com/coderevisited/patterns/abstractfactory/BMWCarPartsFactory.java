@@ -23,44 +23,31 @@
  *
  */
 
-package com.coderevisited.patterns.builder;
+package com.coderevisited.patterns.abstractfactory;
 
-public class CarJavaBeansPattern
-{
-    private String variant = "sports";
-    private int numberOfSeats = 4;
-    private boolean powerSteering = false;
-    private boolean enableGPS = false;
-    private boolean alloyWheels = false;
-
-    public CarJavaBeansPattern()
-    {
-
+/**
+ * User :  Suresh
+ * Date :  06/08/15
+ * Version : v1
+ */
+public class BMWCarPartsFactory implements CarPartsFactory {
+    @Override
+    public Tyre createTyre() {
+        return new BMWTyre();
     }
 
-
-    public void setVariant(String variant)
-    {
-        this.variant = variant;
+    @Override
+    public Engine createEngine() {
+        return new BMWEngine();
     }
 
-    public void setNumberOfSeats(int numberOfSeats)
-    {
-        this.numberOfSeats = numberOfSeats;
+    @Override
+    public Interior createInterior() {
+        return new BMWInterior();
     }
 
-    public void setPowerSteering(boolean powerSteering)
-    {
-        this.powerSteering = powerSteering;
-    }
-
-    public void setEnableGPS(boolean enableGPS)
-    {
-        this.enableGPS = enableGPS;
-    }
-
-    public void setAlloyWheels(boolean alloyWheels)
-    {
-        this.alloyWheels = alloyWheels;
+    @Override
+    public Exterior createExterior() {
+        return new BMWExterior();
     }
 }

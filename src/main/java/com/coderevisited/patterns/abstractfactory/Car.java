@@ -23,44 +23,54 @@
  *
  */
 
-package com.coderevisited.patterns.builder;
+package com.coderevisited.patterns.abstractfactory;
 
-public class CarJavaBeansPattern
-{
-    private String variant = "sports";
-    private int numberOfSeats = 4;
-    private boolean powerSteering = false;
-    private boolean enableGPS = false;
-    private boolean alloyWheels = false;
+/**
+ * User :  Suresh
+ * Date :  06/08/15
+ * Version : v1
+ */
+public abstract class Car {
 
-    public CarJavaBeansPattern()
-    {
+    protected String name;
+    protected Tyre tyre;
+    protected Engine engine;
+    protected Interior interior;
+    protected Exterior exterior;
 
+
+    public void setName(String name) {
+        this.name = name;
     }
 
-
-    public void setVariant(String variant)
-    {
-        this.variant = variant;
+    public void assemble() {
+        System.out.println("Assembling Car for continues for 4 hours");
+        doAssemble();
     }
 
-    public void setNumberOfSeats(int numberOfSeats)
-    {
-        this.numberOfSeats = numberOfSeats;
+    protected abstract void doAssemble();
+
+    public void pdc() {
+        System.out.println("PDC is taking place for 2 hours");
     }
 
-    public void setPowerSteering(boolean powerSteering)
-    {
-        this.powerSteering = powerSteering;
+    public void clean() {
+        System.out.println("Cleaning in progress for 30 min");
     }
 
-    public void setEnableGPS(boolean enableGPS)
-    {
-        this.enableGPS = enableGPS;
-    }
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("---------- " + name + " ------\n");
+        sb.append(tyre);
+        sb.append("\n");
+        sb.append(engine);
+        sb.append("\n");
+        sb.append(interior);
+        sb.append("\n");
+        sb.append(exterior);
+        sb.append("\n");
 
-    public void setAlloyWheels(boolean alloyWheels)
-    {
-        this.alloyWheels = alloyWheels;
+        return sb.toString();
+
     }
 }
