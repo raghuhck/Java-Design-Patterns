@@ -32,7 +32,7 @@ import org.junit.Test;
  * Date :  06/08/15
  * Version : v1
  */
-public class FMTest {
+public class FactoryMethodTest {
 
     @Test
     public void buildCar() {

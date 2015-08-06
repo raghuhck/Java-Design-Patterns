@@ -34,7 +34,7 @@ import org.junit.Test;
  * Version : v1
  */
 
-public class DriverTest {
+public class AbstractFactoryTest {
 
     @Test
     public void test() {
