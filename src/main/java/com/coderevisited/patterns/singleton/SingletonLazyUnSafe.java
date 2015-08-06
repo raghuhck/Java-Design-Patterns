@@ -25,20 +25,20 @@
 
 package com.coderevisited.patterns.singleton;
 
-
-public enum SingletonEnumExtended
+public class SingletonLazyUnSafe
 {
-    INSTANCE
-            {
-                public SingletonExpected getInstance()
-                {
-                    return instance;
-                }
-            };
+    private static SingletonLazyUnSafe instance;
 
-    private static final SingletonExpected instance = new SingletonExpected("Dog");
+    private SingletonLazyUnSafe()
+    {
+        // Suppressing creating a new instances
+    }
 
-    public abstract SingletonExpected getInstance();
+    public static SingletonLazyUnSafe getInstance()
+    {
+        if (instance == null) {
+            instance = new SingletonLazyUnSafe();
+        }
+        return instance;
+    }
 }
-
-

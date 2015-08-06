@@ -31,6 +31,6 @@ public enum SingletonEnum
 
     public String toString()
     {
-        return "I am enum singleton";
+        return getDeclaringClass().getCanonicalName() + "@" + hashCode();
     }
 }

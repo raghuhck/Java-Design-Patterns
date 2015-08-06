@@ -37,7 +37,7 @@ public class SingletonLazyDoubleChecked
     public static SingletonLazyDoubleChecked getInstance()
     {
         if (instance == null) {
-            synchronized (SingletonLazy.class) {
+            synchronized (SingletonLazyDoubleChecked.class) {
                 if (instance == null) {
                     instance = new SingletonLazyDoubleChecked();
                 }

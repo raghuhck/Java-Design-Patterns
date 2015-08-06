@@ -25,19 +25,26 @@
 
 package com.coderevisited.patterns.singleton;
 
-public class SingletonLazy
-{
-    private static SingletonLazy instance;
+/**
+ * User :  Suresh
+ * Date :  06/08/15
+ * Version : v1
+ */
+public class SingletonBrokenDoubleCheck {
 
-    private SingletonLazy()
-    {
+    private static SingletonBrokenDoubleCheck instance;
+
+    private SingletonBrokenDoubleCheck() {
         // Suppressing creating a new instances
     }
 
-    public static SingletonLazy getInstance()
-    {
+    public static SingletonBrokenDoubleCheck getInstance() {
         if (instance == null) {
-            instance = new SingletonLazy();
+            synchronized (SingletonBrokenDoubleCheck.class) {
+                if (instance == null) {
+                    instance = new SingletonBrokenDoubleCheck();
+                }
+            }
         }
         return instance;
     }

@@ -26,20 +26,22 @@
 package com.coderevisited.patterns.singleton;
 
 
-public class SingletonLazyThreadSafe
+public class SingletonLazyHolder
 {
-    private SingletonLazyThreadSafe()
+    private SingletonLazyHolder()
     {
 
     }
 
-    public static SingletonLazyThreadSafe getInstance()
+    public static SingletonLazyHolder getInstance()
     {
         return LazyHolder.INSTANCE;
     }
 
     private static class LazyHolder
     {
-        private static final SingletonLazyThreadSafe INSTANCE = new SingletonLazyThreadSafe();
+        private static final SingletonLazyHolder INSTANCE = new SingletonLazyHolder();
     }
+
+
 }
