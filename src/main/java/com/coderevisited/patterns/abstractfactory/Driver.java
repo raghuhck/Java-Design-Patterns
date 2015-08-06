@@ -25,6 +25,8 @@
 
 package com.coderevisited.patterns.abstractfactory;
 
+import com.coderevisited.patterns.abstractfactory.api.*;
+
 /**
  * User :  Suresh
  * Date :  06/08/15

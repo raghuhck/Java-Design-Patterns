@@ -25,10 +25,10 @@
 
 package com.coderevisited.patterns.abstractfactory.api;
 
-import com.coderevisited.patterns.abstractfactory.Engine;
-import com.coderevisited.patterns.abstractfactory.Exterior;
-import com.coderevisited.patterns.abstractfactory.Interior;
-import com.coderevisited.patterns.abstractfactory.Tyre;
+import com.coderevisited.patterns.abstractfactory.impl.Engine;
+import com.coderevisited.patterns.abstractfactory.impl.Exterior;
+import com.coderevisited.patterns.abstractfactory.impl.Interior;
+import com.coderevisited.patterns.abstractfactory.impl.Tyre;
 
 /**
  * User :  Suresh

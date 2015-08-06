@@ -25,7 +25,7 @@
 
 package com.coderevisited.patterns.abstractfactory.impl.audi;
 
-import com.coderevisited.patterns.abstractfactory.Tyre;
+import com.coderevisited.patterns.abstractfactory.impl.Tyre;
 
 /**
  * User :  Suresh

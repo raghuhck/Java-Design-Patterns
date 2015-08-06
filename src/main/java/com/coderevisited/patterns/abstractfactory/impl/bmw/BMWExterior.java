@@ -25,7 +25,7 @@
 
 package com.coderevisited.patterns.abstractfactory.impl.bmw;
 
-import com.coderevisited.patterns.abstractfactory.Exterior;
+import com.coderevisited.patterns.abstractfactory.impl.Exterior;
 
 /**
  * User :  Suresh

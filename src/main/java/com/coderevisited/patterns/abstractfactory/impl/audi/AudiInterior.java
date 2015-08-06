@@ -25,7 +25,7 @@
 
 package com.coderevisited.patterns.abstractfactory.impl.audi;
 
-import com.coderevisited.patterns.abstractfactory.Interior;
+import com.coderevisited.patterns.abstractfactory.impl.Interior;
 
 /**
  * User :  Suresh

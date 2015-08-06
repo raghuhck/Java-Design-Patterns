@@ -25,8 +25,6 @@
 
 package com.coderevisited.patterns.abstractfactory.api;
 
-import com.coderevisited.patterns.abstractfactory.Car;
-
 /**
  * User :  Suresh
  * Date :  06/08/15

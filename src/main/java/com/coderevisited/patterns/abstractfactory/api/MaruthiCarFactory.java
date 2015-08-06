@@ -25,8 +25,10 @@
 
 package com.coderevisited.patterns.abstractfactory.api;
 
-import com.coderevisited.patterns.abstractfactory.*;
-import com.coderevisited.patterns.abstractfactory.api.CarFactory;
+import com.coderevisited.patterns.abstractfactory.impl.CarPartsFactory;
+import com.coderevisited.patterns.abstractfactory.impl.DieselCar;
+import com.coderevisited.patterns.abstractfactory.impl.PetrolCar;
+import com.coderevisited.patterns.abstractfactory.impl.maruthi.MaruthiCarPartsFactory;
 
 /**
  * User :  Suresh
