@@ -26,15 +26,19 @@
 package com.coderevisited.patterns.abstractfactory;
 
 import com.coderevisited.patterns.abstractfactory.api.*;
+import org.junit.Test;
 
 /**
  * User :  Suresh
  * Date :  06/08/15
  * Version : v1
  */
-public class Driver {
 
-    public static void main(String[] args) {
+public class DriverTest {
+
+    @Test
+    public void test() {
+
         CarFactory maruthiCarFactory = new MaruthiCarFactory();
         makeCar(maruthiCarFactory);
 
@@ -44,6 +48,7 @@ public class Driver {
         CarFactory bmwCarFactory = new BMWCarFactory();
         makeCar(bmwCarFactory);
     }
+
 
     private static void makeCar(CarFactory factory) {
         Car car = factory.orderCar("Diesel");
