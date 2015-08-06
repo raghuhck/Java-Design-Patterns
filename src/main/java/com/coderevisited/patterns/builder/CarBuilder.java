@@ -26,38 +26,66 @@
 package com.coderevisited.patterns.builder;
 
 /**
- * Telescoping constructor anti pattern
+ * User :  Suresh
+ * Date :  06/08/15
+ * Version : v1
  */
-public class CarTelescoping
-{
+public class CarBuilder {
+
     private final String variant;
     private final int numberOfSeats;
-    private final boolean powerSteering;
-    private final boolean enableGPS;
-    private final boolean alloyWheels;
+    private boolean powerSteering;
+    private boolean enableGPS;
+    private boolean alloyWheels;
 
-    public CarTelescoping(String variant, int numberOfSeats)
-    {
-        this(variant, numberOfSeats, false);
-    }
-
-
-    public CarTelescoping(String variant, int numberOfSeats, boolean powerSteering)
-    {
-        this(variant, numberOfSeats, powerSteering, false);
-    }
-
-    public CarTelescoping(String variant, int numberOfSeats, boolean powerSteering, boolean enableGPS)
-    {
-        this(variant, numberOfSeats, powerSteering, enableGPS, false);
-    }
-
-    public CarTelescoping(String variant, int numberOfSeats, boolean powerSteering, boolean enableGPS, boolean alloyWheels)
+    public CarBuilder(String variant, int numberOfSeats)
     {
         this.variant = variant;
         this.numberOfSeats = numberOfSeats;
+    }
+
+
+    public CarBuilder setPowerSteering(boolean powerSteering)
+    {
         this.powerSteering = powerSteering;
+        return this;
+    }
+
+    public CarBuilder setEnableGPS(boolean enableGPS)
+    {
         this.enableGPS = enableGPS;
+        return this;
+
+    }
+
+    public CarBuilder setAlloyWheels(boolean alloyWheels)
+    {
         this.alloyWheels = alloyWheels;
+        return this;
+    }
+
+    public Car build()
+    {
+        return new Car(this);
+    }
+
+    public String getVariant() {
+        return variant;
+    }
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public boolean isPowerSteering() {
+        return powerSteering;
+    }
+
+    public boolean isEnableGPS() {
+        return enableGPS;
+    }
+
+    public boolean isAlloyWheels() {
+        return alloyWheels;
     }
 }

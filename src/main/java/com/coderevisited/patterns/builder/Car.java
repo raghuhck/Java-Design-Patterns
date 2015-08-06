@@ -39,54 +39,44 @@ public class Car
     private final boolean enableGPS;
     private final boolean alloyWheels;
 
-    public Car(Builder builder)
+    public Car(CarBuilder builder)
     {
-        this.variant = builder.variant;
-        this.numberOfSeats = builder.numberOfSeats;
-        this.powerSteering = builder.powerSteering;
-        this.enableGPS = builder.enableGPS;
-        this.alloyWheels = builder.alloyWheels;
+        this.variant = builder.getVariant();
+        this.numberOfSeats = builder.getNumberOfSeats();
+        this.powerSteering = builder.isPowerSteering();
+        this.enableGPS = builder.isEnableGPS();
+        this.alloyWheels = builder.isAlloyWheels();
     }
 
-    public static class Builder
-    {
-
-        private final String variant;
-        private final int numberOfSeats;
-        private boolean powerSteering;
-        private boolean enableGPS;
-        private boolean alloyWheels;
-
-        public Builder(String variant, int numberOfSeats)
-        {
-            this.variant = variant;
-            this.numberOfSeats = numberOfSeats;
-        }
-
-
-        public Builder setPowerSteering(boolean powerSteering)
-        {
-            this.powerSteering = powerSteering;
-            return this;
-        }
-
-        public Builder setEnableGPS(boolean enableGPS)
-        {
-            this.enableGPS = enableGPS;
-            return this;
-
-        }
-
-        public Builder setAlloyWheels(boolean alloyWheels)
-        {
-            this.alloyWheels = alloyWheels;
-            return this;
-        }
-
-        public Car build()
-        {
-            return new Car(this);
-        }
+    public String getVariant() {
+        return variant;
     }
 
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public boolean isPowerSteering() {
+        return powerSteering;
+    }
+
+    public boolean isEnableGPS() {
+        return enableGPS;
+    }
+
+    public boolean isAlloyWheels() {
+        return alloyWheels;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("A new car is ready : ");
+        sb.append("Varient : " + getVariant());
+        sb.append("number of seats : " + getNumberOfSeats());
+        sb.append("power steering enabled ? : " + isPowerSteering());
+        sb.append("GPS enabled ? : " + isEnableGPS());
+        sb.append("Alloy Wheels ? : " + isAlloyWheels());
+        return sb.toString();
+    }
 }
